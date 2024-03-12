@@ -8,15 +8,17 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "bun build src/index.ts --outdir dist --target node",
+    "run-build": "GOOGLE_APPLICATION_CREDENTIALS='/var/.gcloud/big-art-wall-owner.json' TOPIC='event-album-1' node dist/index.js",
+    "start": "GOOGLE_APPLICATION_CREDENTIALS='/var/.gcloud/big-art-wall-owner.json' TOPIC='event-album-1' bun src/index.ts",
     "tsc": "tsc"
   },
   "dependencies": {
     "@google-cloud/pubsub": "4.3.3",
     "express": "^4.18.3"
   },
-  "devDependencies": {},
-  "peerDependencies": {
+  "devDependencies": {
     "@types/express": "4.17.21",
+    "bun-types": "1.0.30",
     "typescript": "^5.0.0"
   }
 }
